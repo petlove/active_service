@@ -1,0 +1,35 @@
+require:
+  - rubocop-performance
+
+Layout/LineLength:
+  Max: 120
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Exclude:
+    - 'bin/*'
+
+Style/RaiseArgs:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 30
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.7
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  Exclude:
+    - 'bin/*'
+    - 'spec/*'
+
