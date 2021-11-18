@@ -16,7 +16,7 @@ module ActiveService
       def perform(*args)
         new(*args).perform
       rescue StandardError => e
-        Response.new(errors: e.message)
+        Response.new(errors: e.message, raised_exception: e)
       end
 
       def perform!(*args)

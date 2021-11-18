@@ -13,6 +13,10 @@ module ActiveService
       errors.empty?
     end
 
+    def invalid?
+      !valid?
+    end
+
     def errors
       @errors ||= []
     end

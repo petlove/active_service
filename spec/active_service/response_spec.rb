@@ -47,10 +47,28 @@ RSpec.describe ActiveService::Response do
       end
     end
 
-    context 'when faillure' do
+    context 'when failure' do
       subject { described_class.new(errors: 'message').valid? }
 
       it 'returns false when it is not valid?' do
+        is_expected.to be false
+      end
+    end
+  end
+
+  describe '#invalid?' do
+    context 'when success' do
+      subject { described_class.new(errors: 'message').invalid? }
+
+      it 'returns true when it is invalid?' do
+        is_expected.to be true
+      end
+    end
+
+    context 'when failure' do
+      subject { described_class.new.invalid? }
+
+      it 'returns false when it is not invalid?' do
         is_expected.to be false
       end
     end

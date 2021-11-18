@@ -49,7 +49,7 @@ RSpec.describe ActiveService::Base do
     end
 
     context 'when exception is risen' do
-      before { allow(ActiveService::Base).to receive(:new).and_raise(StandardError) }
+      before { allow(ActiveService::Base).to receive(:new).and_raise(ArgumentError) }
 
       subject { described_class.perform }
 
@@ -59,6 +59,10 @@ RSpec.describe ActiveService::Base do
 
       it 'response is not valid' do
         expect(subject.valid?).to be false
+      end
+
+      it 'exposes the raised exception' do
+        expect(subject.raised_exception).to be_an(ArgumentError)
       end
     end
   end
