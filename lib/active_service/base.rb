@@ -16,7 +16,13 @@ module ActiveService
       def perform(*args)
         new(*args).perform
       rescue StandardError => e
-        Response.new(errors: e.message, raised_exception: e)
+        data = {
+          errors: e.message,
+          error_class: e.class.name
+        }
+        data[:error_backtrace] = e.backtrace if e.backtrace
+
+        Response.new(data)
       end
 
       def perform!(*args)

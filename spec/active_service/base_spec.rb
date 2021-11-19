@@ -61,8 +61,12 @@ RSpec.describe ActiveService::Base do
         expect(subject.valid?).to be false
       end
 
-      it 'exposes the raised exception' do
-        expect(subject.raised_exception).to be_an(ArgumentError)
+      it "exposes the exception's class name" do
+        expect(subject.error_class).to eq 'ArgumentError'
+      end
+
+      it "exposes the exception's backtrace" do
+        expect(subject.error_backtrace).not_to be_empty
       end
     end
   end
