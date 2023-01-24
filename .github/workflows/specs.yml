@@ -25,3 +25,4 @@ jobs:
       - name: Run rubocop
         run: |
           bundle exec rubocop
+        if: ${{ matrix.ruby-version == '2.6' }}
