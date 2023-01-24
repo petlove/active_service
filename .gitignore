@@ -23,3 +23,4 @@
 .rspec_status
 .tool-versions
 tags
+Gemfile.lock

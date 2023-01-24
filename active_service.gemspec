@@ -23,7 +23,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'awesome_print'
 
-  spec.add_development_dependency 'bundler', '~> 2.1.4'
   spec.add_development_dependency 'dotenv', '~> 2.7.5'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'rake', '~> 13.0'
