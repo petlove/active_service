@@ -25,9 +25,10 @@ module ActiveService
 
     def handle_errors_and_messages
       tmp.each_pair do |key, value|
-        if key.to_s == 'errors'
+        case key.to_s
+        when 'errors'
           @errors = [value].flatten.compact
-        elsif key.to_s == 'messages'
+        when 'messages'
           @messages = [value].flatten.compact
         end
       end

@@ -26,7 +26,7 @@ Metrics/MethodLength:
 
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 2.6
 Style/FrozenStringLiteralComment:
   Enabled: false
   Exclude:
